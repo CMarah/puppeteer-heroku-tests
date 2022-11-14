@@ -1,7 +1,9 @@
 import puppeteer from 'puppeteer';
 
 const chr_test = (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox'],
+  });
   const page = await browser.newPage();
 
   await page.goto('https://developers.google.com/web/');
